@@ -1,10 +1,26 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "target": "es2024",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
     "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "allowImportingTsExtensions": true
+    "skipLibCheck": true,
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "types": [
+      "node"
+    ],
+    "paths": {
+    },
+    "rewriteRelativeImportExtensions": true,
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true
   }
 }

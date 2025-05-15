@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cc-client-deployment
+  labels:
+    app: cc-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cc-client
+  template:
+    metadata:
+      labels:
+        app: cc-client
+    spec:
+      containers:
+        - name: cc-client
+          image: yorkwmsoe/cc-client
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 4001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cc-client-service
+spec:
+  ports:
+  - port: 4001
+    protocol: TCP
+    targetPort: 4001
+  selector:
+    app: cc-client
+  type: LoadBalancer
